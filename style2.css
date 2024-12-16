@@ -1,0 +1,239 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1a1a1a;
+}
+
+.logo img {
+    height: 75px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    padding: 6px;
+    margin-right: 10px;
+    border: none;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.search button {
+    padding: 6px 10px;
+    background: white;
+    color: #ff6347;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+svg {
+    color: #cd3535;
+    fill: currentColor;
+    width: 12px;
+    height: 14px;
+    padding: 10px;
+  }
+
+.search button i {
+    font-size: 16px;
+}
+
+.search button:hover {
+    background: #ff6347;
+    color: white;
+}
+
+.btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e5533d;
+}
+
+/* Hero Section */
+.hero {
+    background: url('./Forzah5.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 50px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.product-card img {
+    width: 50%;
+}
+
+.product-card h3 {
+    margin: 15px 0;
+}
+
+.btn-secondary {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-us p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Us Section */
+.contact-us {
+    padding: 50px;
+    background-color: #f4f4f9;
+}
+
+.contact-us form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-us input, 
+.contact-us textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-us button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-us button:hover {
+    background-color: #e5533d;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links img {
+    height: 24px;
+    width: 24px;
+}  

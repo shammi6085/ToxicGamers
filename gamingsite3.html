@@ -1,0 +1,92 @@
+<!-- Main HTML file for Assignment 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gaming Retailer Web Application">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./style3.css">
+    <title>Gaming Store</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Gaming Retailer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="upcoming.html">Upcoming Games</a></li>
+                <li><a href="consoles.html">Consoles & Peripherals</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="faq.html">Queries & FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Discover the Latest in Gaming</h2>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="./GTAV-Review.jpg" alt="Gaming Setup 1" class="responsive">
+                </div>
+                <div class="slide fade">
+                    <img src="./BO6_LP-meta_image.jpg" alt="Gaming Setup 2" class="responsive">
+                </div>
+                <div class="slide fade">
+                    <img src="./Forzah5.jpg" alt="Gaming Setup 3" class="responsive">
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <p>Welcome to the best gaming retailer, offering the latest games, consoles, and peripherals to enhance your gaming experience.</p>
+        </section>
+
+        <section id="features">
+            <h2>What We Offer</h2>
+            <div class="feature">
+                <img src="./PS5.jpeg" alt="Gaming Consoles">
+                <h3>Consoles</h3>
+                <p>Explore the latest gaming consoles from top brands.</p>
+            </div>
+            <div class="feature">
+                <img src="./controller.jpeg" alt="Gaming Peripherals">
+                <h3>Peripherals</h3>
+                <p>Find high-quality gaming peripherals to enhance your setup.</p>
+            </div>
+            <div class="feature">
+                <img src="./bo6.jpg" alt="Games">
+                <h3>Games</h3>
+                <p>Discover new and upcoming titles for every platform.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gaming Retailer | <a href="privacy.html">Privacy Policy</a></p>
+        <p>Developer Notes: All rights reserved. Comments for developers can go here.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
+</body>
+</html>
