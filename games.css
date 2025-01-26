@@ -131,9 +131,15 @@ nav {
 }
 
 /* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     display: none;
     list-style: none;
+    position: absolute;
+    top: 100%;
     background: linear-gradient(135deg, #223043 25%, #b300c0 50%, #223043 75%);
     background-size: 350% 100%;
     animation: gradientAnimation 5s linear infinite;
@@ -160,8 +166,11 @@ nav {
     color: #ff6347;
 }
 
-/* Show dropdown when active */
 .dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 
