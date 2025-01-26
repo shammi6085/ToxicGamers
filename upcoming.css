@@ -169,7 +169,6 @@ nav {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-
 /* Mobile Responsive Dropdown */
 @media (max-width: 768px) {
     .dropdown-menu {
