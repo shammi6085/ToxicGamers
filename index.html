@@ -52,35 +52,43 @@
             </ul>
         </nav>
         <script>
-            // Toggle navigation and dropdown on mobile
+            // Toggle navigation on mobile
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-            const dropdown = document.querySelector('.dropdown');
-    
+
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 hamburger.classList.toggle('active');
             });
-    
-            // Toggle dropdown on mobile
-            dropdown.addEventListener('click', () => {
-                dropdown.classList.toggle('active');
+
+            // Toggle dropdown for all dropdown menus
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach((dropdown) => {
+                dropdown.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent the click from bubbling up
+                    dropdown.classList.toggle('active');
+                });
             });
-    
-            // Close navigation and dropdown when clicking outside
+
+            // Close navigation and dropdowns when clicking outside
             document.addEventListener('click', (event) => {
                 const isClickInsideNav = navLinks.contains(event.target);
                 const isClickOnHamburger = hamburger.contains(event.target);
-                const isClickOnDropdown = dropdown.contains(event.target);
-    
+
+                // Close navigation if clicking outside
                 if (!isClickInsideNav && !isClickOnHamburger) {
                     navLinks.classList.remove('active');
                     hamburger.classList.remove('active');
                 }
-    
-                if (!isClickOnDropdown) {
-                    dropdown.classList.remove('active');
-                }
+
+                // Close all dropdowns if clicking outside
+                dropdowns.forEach((dropdown) => {
+                    const isClickOnDropdown = dropdown.contains(event.target);
+                    if (!isClickOnDropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                });
             });
         </script>
     
@@ -146,6 +154,9 @@
                 <div class="slide">
                     <img src="./deltaforce.jpeg" alt="Gaming Image 5">
                 </div>
+                <div class="slide">
+                    <img src="./rdr2.jpg" alt="Gaming Image 6">
+                </div>
             </div>
             <div class="hero-content">
                 <h1>Welcome to Toxic Gamers</h1>
@@ -153,6 +164,32 @@
                 <a href="#products" class="btn-primary">View More</a>
             </div>
         </section>
+        <script>
+            // Slideshow Script
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    // Show the current slide
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    showSlide(currentSlide);
+}
+
+// Automatically transition to the next slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Show the first slide initially
+showSlide(currentSlide);
+        </script>
 
         <!-- Sub-Section 1: Must-Play Games of 2024 -->
         <section id="must-play" class="sub-section">
