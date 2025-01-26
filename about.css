@@ -140,16 +140,9 @@ nav {
 }
 
 /* Dropdown Styles */
-.dropdown {
-    position: relative;
-}
-
 .dropdown-menu {
     display: none;
     list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
     background: linear-gradient(135deg, #223043 25%, #b300c0 50%, #223043 75%);
     background-size: 350% 100%;
     animation: gradientAnimation 5s linear infinite;
@@ -176,7 +169,8 @@ nav {
     color: #ff6347;
 }
 
-.dropdown:hover .dropdown-menu {
+/* Show dropdown when active */
+.dropdown.active .dropdown-menu {
     display: block;
 }
 
@@ -191,14 +185,6 @@ nav {
 
     .dropdown-menu a {
         padding: 10px 20px;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block;
     }
 }
 
@@ -441,6 +427,57 @@ nav {
     .logo img {
         height: 50px;
     }
+}
+
+/* Media Queries for Responsive Header */
+@media (max-width: 1200px) {
+    .nav-links a {
+        font-size: 0.9rem; 
+        padding: 0.5rem 0.8rem; 
+    }
+
+    .search-bar {
+        width: 160px; 
+    }
+
+    .search-bar input {
+        font-size: 12px; 
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .nav-links a {
+        font-size: 0.8rem; 
+        padding: 0.5rem 0.6rem; 
+    }
+
+    .search-bar {
+        width: 140px; 
+    }
+
+    .search-bar input {
+        font-size: 11px; 
+    }
+
+ 
+}
+
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 0.75rem; 
+        padding: 0.5rem; 
+    }
+
+    .search-bar {
+        width: 120px; 
+    }
+
+    .search-bar input {
+        font-size: 10px; 
+    }
+
 }
 
 /* Hero Image Section */
