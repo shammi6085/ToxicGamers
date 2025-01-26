@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toxic Gamers - Gaming Peripherals</title>
+    <title>Toxic Gamers - PC Accessories</title>
     <link rel="stylesheet" href="./pca.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -56,21 +56,40 @@
             // Toggle navigation on mobile
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-    
+
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 hamburger.classList.toggle('active');
             });
-    
-            // Close navigation when clicking outside
+
+            // Toggle dropdown for all dropdown menus
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach((dropdown) => {
+                dropdown.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent the click from bubbling up
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close navigation and dropdowns when clicking outside
             document.addEventListener('click', (event) => {
                 const isClickInsideNav = navLinks.contains(event.target);
                 const isClickOnHamburger = hamburger.contains(event.target);
-    
+
+                // Close navigation if clicking outside
                 if (!isClickInsideNav && !isClickOnHamburger) {
                     navLinks.classList.remove('active');
                     hamburger.classList.remove('active');
                 }
+
+                // Close all dropdowns if clicking outside
+                dropdowns.forEach((dropdown) => {
+                    const isClickOnDropdown = dropdown.contains(event.target);
+                    if (!isClickOnDropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                });
             });
         </script>
     
